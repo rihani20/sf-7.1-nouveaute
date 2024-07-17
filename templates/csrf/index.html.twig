@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CsrfController!{% endblock %}
+
+{% block body %}
+    <form action="{{ path('app_csrf_submit') }}" method="POST">
+        <input type="hidden" name="_token" value="{{ csrf_token('submit') }}">
+        <button type="submit">Voir la page suivante</button>
+    </form>
+{% endblock %}
